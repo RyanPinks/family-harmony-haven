@@ -13,6 +13,17 @@
 }
 
 /* ===========================
+   🛵 Animations
+   =========================== */
+
+.home {
+@keyframes breathe
+  0%   { background-size: 100% 100%; }
+  50%  { background-size: 110% 110%; }
+  100% { background-size: 100% 100%; }
+}
+
+/* ===========================
    🏡 Home Page Styles
    =========================== */
 .home {
@@ -69,15 +80,7 @@
   color: deeper flow;
 }
 
-/* ===========================
-   🏡 Animations
-   =========================== */
 
-.home {
-@keyframes breathe
-  0%   { background-size: 100% 100%; }
-  50%  { background-size: 110% 110%; }
-  100% { background-size: 100% 100%; }
 }
 
 /* ===========================
@@ -102,7 +105,7 @@
   text-align: center;
   background: linear-gradient(270deg, blue, white, green, yellow, orange, red, pink);
   background-size: 1400% 1400%;
-  animation: rainbow 30s ease infinite;
+  animation: breathe 30s ease infinite;
   min-height: 100vh; /* makes sure background covers full page */
   padding: 20px;
 }
@@ -118,7 +121,7 @@
   font-weight: bold;
   background: linear-gradient(90deg, white, pink, red, orange, yellow, green, blue);
   background-size: 400% 400%;
-  animation: rainbow 10s ease infinite;
+  animation: breathe 10s ease infinite;
   border: none;
   cursor: pointer;
   box-shadow: 0 0 15px rgba(255,255,255,0.6);
@@ -151,17 +154,6 @@
 }
 
 /* ===========================
-   🌈 Animations
-   =========================== */
-
-.rainbow {
-@keyframes rainbow
-  0%   { background-size: 100% 100%; }
-  50%  { background-size: 110% 110%; }
-  100% { background-size: 100% 100%; }
-}
-
-/* ===========================
    🌕 Moon Page Styles
    =========================== */
 .moon {
@@ -191,7 +183,7 @@
   font-weight: bold;
   background: linear-gradient(90deg, Midnight Blue, Indigo, Violet);
   background-size: 400% 400%;
-  animation: rainbowShift 10s ease infinite;
+  animation: breathe 10s ease infinite;
   border: none;
   cursor: pointer;
   box-shadow: 0 0 15px rgba(255,255,255,0.6);
@@ -210,17 +202,6 @@
 
 .home a:hover {
   color: Indigo;
-}
-
-/* ===========================
-  🌕 Animations
-   =========================== */
-
-.moon {
-@keyframes breathe
-  0%   { background-size: 100% 100%; }
-  50%  { background-size: 110% 110%; }
-  100% { background-size: 100% 100%; }
 }
 
 /* ===========================
