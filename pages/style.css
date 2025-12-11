@@ -44,3 +44,56 @@ body {
   font-style: italic;
   opacity: 0.9;
 }
+
+/* ===========================
+   🌈 Rainbow Page Styles
+   =========================== */
+.rainbow {
+  text-align: center;
+  background: linear-gradient(270deg, blue, white, green, yellow, orange, red, pink);
+  background-size: 1400% 1400%;
+  animation: rainbowShift 30s ease infinite;
+  min-height: 100vh; /* makes sure background covers full page */
+  padding: 20px;
+}
+
+/* ===========================
+   🌈 Buttons
+   =========================== */
+
+/* Rainbow buttons scoped to your page */
+.rainbow-button {
+  padding: 12px 24px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 400% 400%;
+  animation: rainbowShift 10s ease infinite;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255,255,255,0.6);
+}
+
+/* ===========================
+   🌈 Links
+   =========================== */
+
+.rainbow a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.rainbow a:hover {
+  color: yellow;
+}
+
+/* Rainbow text styles */
+.rainbow h1,
+.rainbow h2,
+.rainbow p {
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+}
