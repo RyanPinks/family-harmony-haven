@@ -25,38 +25,6 @@
 }
 
 /* ===========================
-   🌈 Buttons
-   =========================== */
-
-/* Rainbow buttons scoped to your page */
-.rainbow-button {
-  padding: 12px 24px;
-  border-radius: 8px;
-  color: white;
-  font-weight: bold;
-  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-  background-size: 400% 400%;
-  animation: rainbowShift 10s ease infinite;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 0 15px rgba(255,255,255,0.6);
-}
-
-/* ===========================
-   🌈 Links
-   =========================== */
-a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: yellow;
-}
-
-/* ===========================
    🌈 Text Styles
    =========================== */
 
@@ -73,5 +41,4 @@ p {
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
-}
 }
