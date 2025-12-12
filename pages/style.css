@@ -113,18 +113,6 @@ box-shadow: 0 0 15px rgba(255,255,255,0.6);
 }
 
 /* ===========================
-   🌈 Rainbow Page Styles
-   =========================== */
-.rainbow {
-  text-align: center;
-  background: linear-gradient(270deg, blue, white, green, yellow, orange, red, pink);
-  background-size: 1400% 1400%;
-  animation: breatheBackground 30s ease infinite;
-  min-height: 100vh; /* makes sure background covers full page */
-  padding: 20px;
-}
-
-/* ===========================
    🌈 Buttons
    =========================== */
 
@@ -154,17 +142,6 @@ box-shadow: 0 0 15px rgba(255,255,255,0.6);
 
 .rainbow a:hover {
   color: yellow;
-}
-
-/* ===========================
-   🌈 Text Style
-   =========================== */
-
-.rainbow h1,
-.rainbow h2,
-.rainbow p {
-  color: white;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
 }
 
 /* ===========================
