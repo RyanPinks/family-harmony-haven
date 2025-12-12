@@ -1,4 +1,18 @@
 /* ===========================
+   🌌 Global Reset & Base Styles
+   =========================== */
+
+  body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+  min-height: 100vh;       /* full screen */
+  text-align: center;
+}
+
+/* ===========================
    🌈 Rainbow Page Styles
    =========================== */
 .{
