@@ -16,8 +16,7 @@
    🛵 Animations
    =========================== */
 
-.home {
-@keyframes breathe
+@keyframes breathe {
   from { opacity: 0; }
   to { opacity: 1; }
   0%   { background-size: 100% 100%; }
