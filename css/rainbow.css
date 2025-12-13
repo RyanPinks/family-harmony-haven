@@ -19,7 +19,6 @@
   text-align: center;
   background: linear-gradient(270deg, blue, white, green, yellow, orange, red, pink);
   background-size: 1400% 1400%;
-  animation: rainbowShift 30s ease infinite;
   min-height: 100vh; /* makes sure background covers full page */
   padding: 20px;
 }
@@ -33,12 +32,3 @@ h2,
 p {
   color: white;
   text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
-
-  /* ===========================
-   🌈 Animations
-   =========================== */
-@keyframes rainbowShift {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
