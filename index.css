@@ -3,13 +3,14 @@
 =========================== */
 body{
 background-image: url("images/prism-belonging.png");
+}
 display: flex;
 justify-content: center;
 align-items: center;
 min-height: 100vh;
 font-family: "Segoe UI", sans-serif;
 text-align: center;
-}
+
 /* ===========================
    🏡 Text Styles
    =========================== */
