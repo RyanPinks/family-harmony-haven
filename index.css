@@ -15,12 +15,12 @@ text-align: center;
    🏡 Text Styles
    =========================== */
 
-.home h1 {
+h1 {
   font-size: 2.2rem;
   text-shadow: 0 0 12px rgba(255,255,255,0.6);
 }
 
-.home p {
+p {
   font-size: 1.2rem;
   font-style: italic;
   opacity: 0.9;
