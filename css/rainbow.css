@@ -12,23 +12,3 @@
   text-align: center;
 }
 
-/* ===========================
-   🌈 Rainbow Page Styles
-   =========================== */
-{
-  text-align: center;
-  background: linear-gradient(270deg, blue, white, green, yellow, orange, red, pink);
-  background-size: 1400% 1400%;
-  min-height: 100vh; /* makes sure background covers full page */
-  padding: 20px;
-}
-
-/* ===========================
-   🌈 Text Styles
-   =========================== */
-
-h1,
-h2,
-p {
-  color: white;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
