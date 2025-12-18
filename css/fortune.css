@@ -14,7 +14,7 @@ body {
 }
 
 /* ===========================
-   🌈 Background
+   🥠 Background
    =========================== */
 body{
   background-image: url("../images/blank.png");
@@ -24,7 +24,7 @@ body{
 }
    
 /* ===========================
-   🌈 Overlays
+   🥠 Overlays
    =========================== */
 
 body::before {
