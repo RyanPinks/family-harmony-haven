@@ -14,7 +14,7 @@ body {
     background-size: auto 100%;   /* scales height to fit */
     background-position: center;  /* keeps focus centered */
     background-repeat: no-repeat; /* avoids tiling */
-    filter: brightness(1.4); /* 1.0 = normal, >1 = brighter */
+    filter: brightness(1.5); /* 1.0 = normal, >1 = brighter */
 }
    
 /* ===========================
