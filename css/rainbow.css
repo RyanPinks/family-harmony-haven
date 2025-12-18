@@ -10,14 +10,7 @@
   align-items: center;     /* vertical center */
   min-height: 100vh;       /* full screen */
   text-align: center;
-  }
-
-/* ===========================
-   🌈 Background
-   =========================== */
-
-body (
-  background-image: url("../images/a-whimsical-fantasy.png");
+  background-image: url("../images/a-whimsical-fantasy.png"); /*👈🏻 Background Settings 👇🏻*/
     background-size: auto 100%;   /* scales height to fit */
     background-position: center;  /* keeps focus centered */
     background-repeat: no-repeat; /* avoids tiling */
