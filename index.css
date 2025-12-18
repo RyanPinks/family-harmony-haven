@@ -1,7 +1,7 @@
 /* ===========================
 🏡 Home Page Styles
 =========================== */
-body{
+body {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,7 +14,7 @@ body{
    🏡 Background
    =========================== */
 
-body (
+body {
   background-image: url("images/prism-belonging.png");
     background-size: auto 100%;   /* scales height to fit */
     background-position: center;  /* keeps focus centered */
