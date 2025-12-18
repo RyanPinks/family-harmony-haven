@@ -29,7 +29,7 @@ body::before {
   width: 100%;
   height: 100%;
   background: rgba(255,255,255,0.2); /* frosty glass effect */
-  backdrop-filter: blur(4px);        /* adds window blur */
+  backdrop-filter: blur(0px);        /* adds window blur */
   pointer-events: none;              /* lets clicks pass through */
   z-index: 1;                        /* sits above background */
 }
