@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+  min-height: 100vh;       /* full screen */
+  text-align: center;
+  background-image: url("../images/moon-cat-in-the-quiet-glow.png"); /*👈🏻 Background Settings 👇🏻*/
+    background-size: auto 100%;   /* scales height to fit */
+    background-position: center;  /* keeps focus centered */
+    background-repeat: no-repeat; /* avoids tiling */
+    filter: brightness(1.4); /* 1.0 = normal, >1 = brighter */
+}
+   
+/* ===========================
+   🥠 Overlays
+   =========================== */
+
+body::before {
+  content: "";
+  position: fixed;       /* stays in place */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.2); /* frosty glass effect */
+  backdrop-filter: blur(1px);        /* adds window blur */
+  pointer-events: none;              /* lets clicks pass through */
+  z-index: 1;                        /* sits above background */
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px; /* snow height */
+  background: linear-gradient(to top, white 0%, transparent 100%);
+  z-index: 2;
+  pointer-events: none;
+}
