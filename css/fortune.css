@@ -2,7 +2,7 @@
    🌌 Global Reset & Base Styles
    =========================== */
 
-  body {
+body {
   margin: 0;
   padding: 0;
   display: flex;
@@ -11,3 +11,7 @@
   min-height: 100vh;       /* full screen */
   text-align: center;
   background-image: url("../images/blank.png");
+  background-size: cover;       /* fills width & height */
+  background-position: center;  /* keeps focus centered */
+  background-repeat: no-repeat; /* avoids tiling */
+}
