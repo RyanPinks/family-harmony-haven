@@ -10,7 +10,7 @@ body {
   align-items: center;     /* vertical center */
   min-height: 100vh;       /* full screen */
   text-align: center;
-  background-image: url("../images/moon-cat-in-the-quiet-glow.png"); /*👈🏻 Background Settings 👇🏻*/
+  background-image: url("../images/blank.png"); /*👈🏻 Background Settings 👇🏻*/
     background-size: auto 100%;   /* scales height to fit */
     background-position: center;  /* keeps focus centered */
     background-repeat: no-repeat; /* avoids tiling */
