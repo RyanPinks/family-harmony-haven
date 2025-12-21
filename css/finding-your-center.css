@@ -10,6 +10,7 @@ body {
   align-items: center;     /* vertical center */
   min-height: 100vh;       /* full screen */
   text-align: center;
+  text-shadow: 1px 1px 2px white; 
   background-image: url("../images/finding-your-center-in-nature.png"); /*👈🏻 Background Settings 👇🏻*/
     background-size: auto 100%;   /* scales height to fit */
     background-position: center;  /* keeps focus centered */
