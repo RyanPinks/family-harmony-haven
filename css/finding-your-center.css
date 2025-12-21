@@ -45,3 +45,11 @@ body::after {
   z-index: 2;
   pointer-events: none;
 }
+
+.guide-section {
+  margin-bottom: 3rem;
+}
+
+.guide-section p {
+  line-height: 1.6;
+}
