@@ -1,0 +1,89 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="royalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4f46e5;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="shimmer" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:0.3" />
+      <stop offset="50%" style="stop-color:#ffffff;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#ffd700;stop-opacity:0.3" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Royal Blue Background -->
+  <rect width="1200" height="800" fill="url(#royalGradient)"/>
+  
+  <!-- Decorative shimmer overlay -->
+  <rect width="1200" height="800" fill="url(#shimmer)" opacity="0.1"/>
+  
+  <!-- Subtle oak tree silhouettes in corners -->
+  <g opacity="0.15" fill="#000000">
+    <!-- Top left oak -->
+    <ellipse cx="100" cy="100" rx="80" ry="100"/>
+    <rect x="90" y="150" width="20" height="60"/>
+    
+    <!-- Top right oak -->
+    <ellipse cx="1100" cy="100" rx="80" ry="100"/>
+    <rect x="1090" y="150" width="20" height="60"/>
+    
+    <!-- Bottom left oak -->
+    <ellipse cx="100" cy="700" rx="80" ry="100"/>
+    <rect x="90" y="650" width="20" height="60"/>
+    
+    <!-- Bottom right oak -->
+    <ellipse cx="1100" cy="700" rx="80" ry="100"/>
+    <rect x="1090" y="650" width="20" height="60"/>
+  </g>
+  
+  <!-- Decorative roses scattered -->
+  <g opacity="0.25">
+    <circle cx="200" cy="200" r="15" fill="#dc2626"/>
+    <circle cx="195" cy="195" r="8" fill="#ef4444"/>
+    
+    <circle cx="1000" cy="250" r="15" fill="#dc2626"/>
+    <circle cx="995" cy="245" r="8" fill="#ef4444"/>
+    
+    <circle cx="300" cy="600" r="15" fill="#dc2626"/>
+    <circle cx="295" cy="595" r="8" fill="#ef4444"/>
+    
+    <circle cx="900" cy="650" r="15" fill="#dc2626"/>
+    <circle cx="895" cy="645" r="8" fill="#ef4444"/>
+  </g>
+  
+  <!-- Lavender sprigs -->
+  <g opacity="0.2" fill="#a78bfa">
+    <ellipse cx="150" cy="400" rx="5" ry="30"/>
+    <ellipse cx="1050" cy="400" rx="5" ry="30"/>
+    <ellipse cx="600" cy="100" rx="5" ry="30"/>
+    <ellipse cx="600" cy="700" rx="5" ry="30"/>
+  </g>
+  
+  <!-- Golden star accents (for Luran) -->
+  <g fill="#ffd700" filter="url(#glow)" opacity="0.4">
+    <polygon points="250,150 255,165 270,165 258,175 263,190 250,180 237,190 242,175 230,165 245,165" />
+    <polygon points="950,150 955,165 970,165 958,175 963,190 950,180 937,190 942,175 930,165 945,165" />
+    <polygon points="250,650 255,665 270,665 258,675 263,690 250,680 237,690 242,675 230,665 245,665" />
+    <polygon points="950,650 955,665 970,665 958,675 963,690 950,680 937,690 942,675 930,665 945,665" />
+  </g>
+  
+  <!-- Elegant border frame -->
+  <rect x="20" y="20" width="1160" height="760" fill="none" stroke="#ffd700" stroke-width="2" opacity="0.3"/>
+  <rect x="30" y="30" width="1140" height="740" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.2"/>
+  
+  <!-- Decorative corner flourishes -->
+  <g stroke="#ffd700" stroke-width="2" fill="none" opacity="0.4">
+    <path d="M 40 40 L 80 40 M 40 40 L 40 80"/>
+    <path d="M 1160 40 L 1120 40 M 1160 40 L 1160 80"/>
+    <path d="M 40 760 L 80 760 M 40 760 L 40 720"/>
+    <path d="M 1160 760 L 1120 760 M 1160 760 L 1160 720"/>
+  </g>
+</svg>
