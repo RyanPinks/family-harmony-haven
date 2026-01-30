@@ -9,120 +9,282 @@
 <body>
   <h1>Welcome to the Wheel of Harmony.</h1>
   <h2>Rules written by Rainbow and Copilot.</h2>
-  <h3>🌈 Wheel of Harmony — Complete Updated Rules (2026 Edition)
-1. Game Overview
-Wheel of Harmony is a cooperative‑competitive word‑puzzle game where players spin a colorful wheel, earn tickets, solve puzzles, and build harmony together.
-The game emphasizes gentle strategy, shared rewards, and rainbow‑based currency instead of harsh penalties.
+    <title>Spinning Wheel Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-2. Components
-- The Wheel with multiple wedge types
-- Puzzle Board (classic hidden phrase format)
-- Tickets in various colors (Spring, Summer, Fall, Winter, Rainbow)
-- Player Boards to track tickets and powers
-- Round Tracker
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
 
-3. Turn Structure
-Each turn follows this flow:
-- Spin the Wheel
-- Resolve the wedge effect
-- If allowed, guess a consonant
-- If correct, earn rewards from the wedge
-- Optionally buy a vowel using tickets
-- Optionally attempt to solve the puzzle
-- Play passes to the next player
+        .container {
+            text-align: center;
+        }
 
-4. Wedge Types
-🎟️ A. Ticket Wedge (Solo Ticket)
-- The player earns 1 ticket of the current round’s color.
-- Tickets are added to their personal pool.
-🤝 B. Shared Ticket Wedge
-- Every player earns 1 ticket of the current round’s color.
-- Keeps everyone involved and connected.
-🎲 C. Random Ticket Wedge
-- The player receives 1 ticket of a random color.
-- Use a mini‑spinner, dice, or card draw to determine the color.
-💸 D. Loan Ticket Wedge
-- The player immediately gains 2 tickets of the current round’s color.
-- At the end of the round, they return 1 ticket of any color.
-- If they cannot, they simply skip their next ticket gain — no punishment.
-💥 E. Lose a Turn
-- The player’s turn ends immediately.
-- No tickets lost.
-🔄 F. Free Spin / Harmony Spin
-- The player gains a Harmony Token.
-- A Harmony Token can be spent to reroll a spin or avoid losing a turn.
-🌈 G. Rainbow Ticket Wedge
-- The player earns 1 Rainbow Ticket, the wild currency.
-- Rainbow Tickets can substitute for any color.
-🌀 H. Mystery Wedge (Optional)
-Choose one of:
-- Gain 3 random tickets
-- Lose all tickets
-- Swap tickets with another player
-- Reveal one letter of your choice
+        h1 {
+            color: white;
+            margin-bottom: 30px;
+            font-size: 42px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
 
-5. Ticket Economy
-Ticket Colors
-- Spring – gentle boosts
-- Summer – energetic actions
-- Fall – strategic trades
-- Winter – defensive or stabilizing actions
-- Rainbow – wild, flexible, rare
-Ticket Uses
-Players may spend tickets on:
-A. Buy a Vowel
-- Cost: 2 tickets of any color
-- Rainbow Tickets count as any color
-B. Mini‑Spin
-- Cost: 3 tickets
-- Grants a small wheel with only positive wedges
-C. Reveal a Letter
-- Cost: 4 tickets
-- Reveal any consonant or vowel of your choice
-D. Harmony Power (Optional)
-Each round has a special power tied to its color.
-Example:
-- Spring: Add a letter to the board
-- Summer: Take an extra turn
-- Fall: Trade tickets with another player
-- Winter: Protect your tickets from loss
+        .wheel-container {
+            position: relative;
+            display: inline-block;
+        }
 
-6. Solving the Puzzle
-A player may attempt to solve the puzzle on their turn after spinning.
-If correct:
-- They win the round
-- They gain 1 Rainbow Ticket
-- All players keep their tickets for the next round unless the rules say otherwise
-If incorrect:
-- Their turn ends
-- No penalty
+        .wheel-wrapper {
+            position: relative;
+            width: 500px;
+            height: 500px;
+        }
 
-7. Round Structure
-Each round has:
-- A color theme
-- A Harmony Power
-- A ticket type for Ticket Wedges
-Rounds continue until:
-- The puzzle is solved
-- All players agree to move on
-- A special event triggers (optional)
+        #wheelCanvas {
+            width: 100%;
+            height: 100%;
+            transition: transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+        }
 
-8. Winning the Game
-Wheel of Harmony can be played:
-- Round‑by‑round, where each round is its own victory
-- Campaign style, where players collect Rainbow Tickets across multiple rounds
-- Cooperative mode, where the group aims for a shared Rainbow Ticket total
-You choose the style that fits the moment.
+        .pointer {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 40px solid #ff6b6b;
+            filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.3));
+            z-index: 10;
+        }
 
-9. Spirit of the Game
-Wheel of Harmony is built on:
-- Connection
-- Shared joy
-- Gentle unpredictability
-- Rainbow‑logic
-- Non‑punitive design
-- Emotional safety
-Competition exists, but harmony is the core.
-</h3>
+        .center-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .spin-button {
+            margin-top: 40px;
+            padding: 18px 50px;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(245, 87, 108, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .spin-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(245, 87, 108, 0.5);
+        }
+
+        .spin-button:active {
+            transform: translateY(0);
+        }
+
+        .spin-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .result {
+            margin-top: 30px;
+            padding: 20px 40px;
+            background: white;
+            border-radius: 15px;
+            display: inline-block;
+            min-width: 300px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .result h2 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        .result p {
+            font-size: 32px;
+            font-weight: bold;
+            color: #667eea;
+            margin: 0;
+        }
+
+        @media (max-width: 600px) {
+            .wheel-wrapper {
+                width: 350px;
+                height: 350px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .spin-button {
+                padding: 15px 40px;
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎡 Spin the Wheel!</h1>
+        
+        <div class="wheel-container">
+            <div class="pointer"></div>
+            <div class="wheel-wrapper">
+                <canvas id="wheelCanvas"></canvas>
+                <div class="center-circle">SPIN</div>
+            </div>
+        </div>
+
+        <button class="spin-button" id="spinButton">SPIN THE WHEEL</button>
+
+        <div class="result" id="result" style="display: none;">
+            <h2>You Won:</h2>
+            <p id="resultText">-</p>
+        </div>
+    </div>
+
+    <script>
+        // ===== CUSTOMIZE YOUR WHEEL HERE =====
+        const wheelData = [
+            { label: "100", color: "#FF6B6B" },
+            { label: "500", color: "#4ECDC4" },
+            { label: "250", color: "#FFE66D" },
+            { label: "750", color: "#95E1D3" },
+            { label: "1000", color: "#F38181" },
+            { label: "50", color: "#AA96DA" },
+            { label: "300", color: "#FCBAD3" },
+            { label: "200", color: "#A8E6CF" }
+        ];
+        // ====================================
+
+        const canvas = document.getElementById('wheelCanvas');
+        const ctx = canvas.getContext('2d');
+        const spinButton = document.getElementById('spinButton');
+        const resultDiv = document.getElementById('result');
+        const resultText = document.getElementById('resultText');
+
+        // Set canvas size
+        canvas.width = 500;
+        canvas.height = 500;
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        const radius = 240;
+
+        let currentRotation = 0;
+        let isSpinning = false;
+
+        // Draw the wheel
+        function drawWheel() {
+            const numSegments = wheelData.length;
+            const anglePerSegment = (2 * Math.PI) / numSegments;
+
+            wheelData.forEach((segment, index) => {
+                const startAngle = index * anglePerSegment;
+                const endAngle = startAngle + anglePerSegment;
+
+                // Draw segment
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, radius, startAngle, endAngle);
+                ctx.lineTo(centerX, centerY);
+                ctx.fillStyle = segment.color;
+                ctx.fill();
+                ctx.strokeStyle = '#fff';
+                ctx.lineWidth = 3;
+                ctx.stroke();
+
+                // Draw text
+                ctx.save();
+                ctx.translate(centerX, centerY);
+                ctx.rotate(startAngle + anglePerSegment / 2);
+                ctx.textAlign = 'center';
+                ctx.fillStyle = '#fff';
+                ctx.font = 'bold 24px Arial';
+                ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
+                ctx.shadowBlur = 3;
+                ctx.shadowOffsetX = 2;
+                ctx.shadowOffsetY = 2;
+                ctx.fillText(segment.label, radius * 0.65, 10);
+                ctx.restore();
+            });
+        }
+
+        // Get winning segment
+        function getWinningSegment(rotation) {
+            const normalizedRotation = ((rotation % 360) + 360) % 360;
+            const pointerAngle = 90; // Pointer is at top (90 degrees)
+            const adjustedAngle = (360 - normalizedRotation + pointerAngle) % 360;
+            const segmentAngle = 360 / wheelData.length;
+            const winningIndex = Math.floor(adjustedAngle / segmentAngle);
+            return wheelData[winningIndex];
+        }
+
+        // Spin the wheel
+        function spinWheel() {
+            if (isSpinning) return;
+            
+            isSpinning = true;
+            spinButton.disabled = true;
+            resultDiv.style.display = 'none';
+
+            // Random spin: 5-8 full rotations plus random degrees
+            const spins = 5 + Math.random() * 3;
+            const randomDegrees = Math.random() * 360;
+            const totalRotation = currentRotation + (spins * 360) + randomDegrees;
+
+            canvas.style.transform = `rotate(${totalRotation}deg)`;
+            currentRotation = totalRotation;
+
+            // Show result after animation
+            setTimeout(() => {
+                const winner = getWinningSegment(totalRotation);
+                resultText.textContent = winner.label;
+                resultText.style.color = winner.color;
+                resultDiv.style.display = 'inline-block';
+                isSpinning = false;
+                spinButton.disabled = false;
+            }, 4000);
+        }
+
+        // Initialize
+        drawWheel();
+        spinButton.addEventListener('click', spinWheel);
+    </script>
+  <a href="../index.html">Home🏡</a>
+  <a href="wheel-of-harmony-rules.html">Wheel of Harmony Rules📏</a>
 </body>
-<html>
+</html>
